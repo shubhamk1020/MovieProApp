@@ -1,11 +1,11 @@
 package com.mastercoding.movieproapp.view;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.databinding.DataBindingUtil;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toolbar;
 
 import com.mastercoding.movieproapp.R;
 import com.mastercoding.movieproapp.databinding.ActivityMovieBinding;
@@ -20,16 +20,17 @@ public class MovieActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie);
 
-      //  Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
-        //setSupportActionBar(toolbar);
-       //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    //  setSupportActionBar(toolbar);
+     // getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         activityMovieBinding = DataBindingUtil.setContentView(
                 this, R.layout.activity_movie);
 
         Intent i = getIntent();
 
-        if(i.hasExtra("movie")){
+        if(i != null){
             movie = getIntent().getParcelableExtra("movie");
             activityMovieBinding.setMovie(movie);
             getSupportActionBar().setTitle(movie.getTitle());
