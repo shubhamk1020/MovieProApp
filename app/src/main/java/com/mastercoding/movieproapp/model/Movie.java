@@ -2,8 +2,12 @@ package com.mastercoding.movieproapp.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.widget.ImageView;
+
 import java.util.List;
 import javax.annotation.Generated;
+
+import com.bumptech.glide.Glide;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -11,6 +15,7 @@ import com.google.gson.annotations.SerializedName;
 
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
+import androidx.databinding.BindingAdapter;
 import androidx.databinding.library.baseAdapters.BR;
 
 @Generated("jsonschema2pojo")
@@ -74,6 +79,21 @@ public class Movie extends BaseObservable implements Parcelable {
             return (new Movie[i]);
         }
     };
+
+    @BindingAdapter({"posterPath"})
+    public static void loadImage(ImageView imageView, String imageURL){
+
+        //Basic Image Url
+        //https://image.tmdb.org/t/p/original/[poster_path]
+
+        String imagePath ="https://image.tmdb.org/t/p/w500"+imageURL;
+
+        Glide.with(imageView.getContext())
+                .load(imagePath)
+                .into(imageView);
+    }
+
+
 
     @Bindable
     public String getPosterPath() {
@@ -234,7 +254,7 @@ public class Movie extends BaseObservable implements Parcelable {
         parcel.writeValue(posterPath);
         parcel.writeValue(originalTitle);
         parcel.writeValue(originalLanguage);
-        parcel.writeValue(genreIds);
+       // parcel.writeValue(genreIds);
         parcel.writeValue(backdropPath);
         parcel.writeValue(backdropPath);
         parcel.writeValue(adult);
@@ -251,7 +271,7 @@ public class Movie extends BaseObservable implements Parcelable {
         this.adult = ((Boolean) in.readValue(String.class.getClassLoader()));
         this.overview = ((String) in.readValue(String.class.getClassLoader()));
         this.releaseDate = ((String) in.readValue(String.class.getClassLoader()));
-        in.readList(this.genreIds,(java.lang.Integer.class.getClassLoader()));
+       // in.readList(this.genreIds,(java.lang.Integer.class.getClassLoader()));
         this.id = ((Integer) in.readValue(Integer.class.getClassLoader()));
         this.originalTitle = ((String) in.readValue(String.class.getClassLoader()));
         this.originalLanguage = ((String) in.readValue(String.class.getClassLoader()));

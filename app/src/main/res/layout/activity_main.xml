@@ -17,11 +17,11 @@
            android:layout_marginTop = "15dp">
 
            <androidx.recyclerview.widget.RecyclerView
+               android:id="@+id/rvMovies"
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
-               android:id="@+id/rvMovies"
                android:clipToPadding="false"
-               android:scrollbars="vertical"/>
+               android:scrollbars="vertical" />
 
 
        </RelativeLayout>

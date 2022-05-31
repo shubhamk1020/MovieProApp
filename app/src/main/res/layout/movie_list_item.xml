@@ -40,11 +40,11 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/ivMovie"
                     android:paddingLeft="10dp"
-                    android:paddingRight="10dp"
                     android:paddingTop="10dp"
+                    android:paddingRight="10dp"
                     android:text="@{movie.title}"
                     android:textColor="@color/black"
-                    android:textSize="15dp"/>
+                    android:textSize="15dp" />
 
                 <TextView
                     android:id="@+id/tvRating"
