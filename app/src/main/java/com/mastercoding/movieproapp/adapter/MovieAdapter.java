@@ -67,6 +67,7 @@ public class MovieAdapter  extends RecyclerView.Adapter<MovieAdapter.MovieViewHo
                         Movie selectedMovie = movieArrayList.get(position);
 
                         Intent i = new Intent(context, MovieActivity.class);
+
                         i.putExtra("movie",selectedMovie);
                         context.startActivity(i);
                     }
