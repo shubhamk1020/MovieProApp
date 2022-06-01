@@ -24,6 +24,9 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private ArrayList<Movie> movies;
+    private RecyclerView recyclerView;
+    private MovieAdapter movieAdapter;
+    private SwipeRefreshLayout swipeRefreshLayout;
     private MainActivityViewModel mainActivityViewModel;
     private ActivityMainBinding activityMainBinding;
 
@@ -41,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
         getPopularMovies();
 
-        SwipeRefreshLayout swipeRefreshLayout = activityMainBinding.swipeLayout;
+        swipeRefreshLayout = activityMainBinding.swipeLayout;
         swipeRefreshLayout.setColorSchemeResources(R.color.teal_200);
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -64,8 +67,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void ShowOnRecyclerView() {
-        RecyclerView recyclerView = activityMainBinding.rvMovies;
-        MovieAdapter movieAdapter = new MovieAdapter(this, movies);
+        recyclerView = activityMainBinding.rvMovies;
+        movieAdapter = new MovieAdapter(this, movies);
 
 
         if(this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){

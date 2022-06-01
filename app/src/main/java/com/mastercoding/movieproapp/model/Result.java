@@ -26,17 +26,17 @@ public class Result implements Parcelable {
 
     // Parceable Creator
 
-    public final static Parcelable.Creator<Result> CREATOR = new Creator<Result>() {
-        @Override
-        public Result createFromParcel(Parcel parcel) {
-            return new Result(parcel);
-        }
+   public final static Parcelable.Creator<Result> CREATOR = new Creator<Result>() {
+       @Override
+       public Result createFromParcel(Parcel source) {
+           return new Result(source);
+       }
 
-        @Override
-        public Result[] newArray(int i) {
-            return (new Result[i]);
-        }
-    };
+       @Override
+       public Result[] newArray(int size) {
+           return new Result[0];
+       }
+   };
 
     public Result() {
     }

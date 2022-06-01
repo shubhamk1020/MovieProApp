@@ -18,8 +18,8 @@ import com.mastercoding.movieproapp.view.MovieActivity;
 import java.util.ArrayList;
 
 public class MovieAdapter  extends RecyclerView.Adapter<MovieAdapter.MovieViewHolder>    {
-    private final Context context;
-    private final ArrayList<Movie> movieArrayList;
+    private Context context;
+    private ArrayList<Movie> movieArrayList;
 
     public MovieAdapter(Context context, ArrayList<Movie> movieArrayList) {
         this.context = context;
@@ -53,7 +53,7 @@ public class MovieAdapter  extends RecyclerView.Adapter<MovieAdapter.MovieViewHo
 
     //View Holder Class
     public class MovieViewHolder extends RecyclerView.ViewHolder{
-        private final MovieListItemBinding movieListItemBinding;
+        private MovieListItemBinding movieListItemBinding;
 
         public MovieViewHolder(MovieListItemBinding movieListItemBinding) {
             super(movieListItemBinding.getRoot());
