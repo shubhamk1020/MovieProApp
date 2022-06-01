@@ -1,7 +1,6 @@
 package com.mastercoding.movieproapp.view;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.databinding.DataBindingUtil;
 
 import android.content.Intent;
@@ -21,9 +20,8 @@ public class MovieActivity extends AppCompatActivity {
         setContentView(R.layout.activity_movie);
 
         //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-
-    //  setSupportActionBar(toolbar);
-     // getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+       //  setSupportActionBar(toolbar);
+      // getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         activityMovieBinding = DataBindingUtil.setContentView(
                 this, R.layout.activity_movie);
